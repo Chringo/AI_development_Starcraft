@@ -82,6 +82,8 @@ $RECYCLE.BIN/
 *.sdf
 *.suo
 *.opensdf
+*.opendb
+*.vcxproj.user
 
 # Compilation folders
 *.pdb
