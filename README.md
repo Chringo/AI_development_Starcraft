@@ -7,4 +7,4 @@ Chaoslauncher - 0.5.4.4
 
 BWAPI - 4.1.2
 
-BWTA - 1.7.1
+BWTA2 - 2.2
