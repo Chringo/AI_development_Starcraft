@@ -1,12 +1,13 @@
 #ifndef MODULEHANDLER_HPP
 #define MODULEHANDLER_HPP
 #include <BWAPI.h>
-
-
+#include <BWTA.h>
+#include <windows.h>
+DWORD WINAPI AnalyzeThread();
 class ModuleHandler : public BWAPI::AIModule
 {
 public:
-	//Methods inherited from BWAPI:AIModule
+	// Methods inherited from BWAPI:AIModule
 	virtual void onStart();
 	virtual void onEnd(bool isWinner);
 	virtual void onFrame();
@@ -24,13 +25,7 @@ public:
 	virtual void onUnitRenegade(BWAPI::Unit unit);
 	virtual void onSaveGame(std::string gameName);
 	virtual void onUnitComplete(BWAPI::Unit unit);
-
-	//ExampleAIModules methods
-	void drawStats();
+	/// ~~~~~~ ///
 	void drawTerrainData();
-	void showPlayers();
-	void showForces();
-	Position findGuardPoint();
-
 };
 #endif
