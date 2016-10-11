@@ -25,7 +25,7 @@ public:
 	virtual void onUnitRenegade(BWAPI::Unit unit);
 	virtual void onSaveGame(std::string gameName);
 	virtual void onUnitComplete(BWAPI::Unit unit);
-	/// ~~~~~~ ///
+	/// ~~~~~~ BWTA2 ~~~~~~ ///
 	void drawTerrainData();
 };
 #endif

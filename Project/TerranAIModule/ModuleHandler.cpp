@@ -8,7 +8,6 @@ bool analysis_just_finished;
 DWORD WINAPI AnalyzeThread()
 {
 	BWTA::analyze();
-
 	analyzed = true;
 	analysis_just_finished = true;
 	return 0;
@@ -20,11 +19,13 @@ void ModuleHandler::onStart()
 	// BWAPI returns std::string when retrieving a string, don't forget to add .c_str() when printing!
 	Broodwar << "The map is " << Broodwar->mapName() << "!" << std::endl;
 
+	//Broodwar->sendText("show me the money");// Lots of resources
+	//Broodwar->sendText("operation cwal");// Fast build
 	// Enable the UserInput flag, which allows us to control the bot and type messages.
 	Broodwar->enableFlag(Flag::UserInput);
 
 	// Uncomment the following line and the bot will know about everything through the fog of war (cheat).
-	//Broodwar->enableFlag(Flag::CompleteMapInformation);
+	Broodwar->enableFlag(Flag::CompleteMapInformation);// Required for BWTA::analyze() to not crash
 
 	// Set the command optimization level so that common commands can be grouped
 	// and reduce the bot's APM (Actions Per Minute).
@@ -325,6 +326,7 @@ void ModuleHandler::onSaveGame(std::string gameName)
 void ModuleHandler::onUnitComplete(BWAPI::Unit unit)
 {
 }
+
 void ModuleHandler::drawTerrainData()
 {
 	// We will iterate through all the base locations, and draw their outlines.
